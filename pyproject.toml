@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pdg-mcp"
+version = "0.1.0"
+description = "MCP server for Provenance Data Grid — 20 data tools for AI agents"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["mcp>=2.0", "httpx>=0.25"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[project.scripts]
+pdg-mcp = "mcp_server.__main__:main_sync"
+
+[project.urls]
+Homepage = "https://pdg.neprovenance.com"
+Documentation = "https://pdg.neprovenance.com/docs"
+"Buy Credits" = "https://pdg.neprovenance.com/billing/plans"
